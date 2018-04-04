@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.1.3)
-project(Lab_10_dnn)
+project(Lab_10_dnn_solutions)
 
 set(CMAKE_CXX_STANDARD 11)
 
