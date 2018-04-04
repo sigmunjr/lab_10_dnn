@@ -4,7 +4,7 @@
 
 
 Dnn_lab::Dnn_lab(std::string data_folder)
-  : net_{/* TODO 2.1: Initialize caffe network from MobileNetSSD_deploy.prototxt and MobileNetSSD_deploy.caffemodel */}
+  : net_{/* TODO 2.1: Initialize caffe network from MobileNetSSD_deploy.prototxt and MobileNetSSD_deploy.caffemodel in the <data_folder>*/}
   , class_colors_{createClassColors(21)}
 {
 }
