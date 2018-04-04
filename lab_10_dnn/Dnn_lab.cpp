@@ -19,11 +19,13 @@ void Dnn_lab::run()
   cv::VideoCapture cap{0};
   for (;;)
   {
-    // TODO 1.1: Capture and show video in loop.
+    // TODO 1.1: Capture video frame
 
     // TODO 1.3: Call method detectInFrame on <frame>
 
     // TODO 1.4: Call drawDetections
+
+    // TODO 1.2: Show image frame
   }
 }
 
