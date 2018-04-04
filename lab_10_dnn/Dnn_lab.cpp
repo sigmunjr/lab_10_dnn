@@ -4,24 +4,26 @@
 
 
 Dnn_lab::Dnn_lab(std::string data_folder)
-  : net_{/* TODO 2.1: Initialize caffe network */}
+  : net_{/* TODO 2.1: Initialize caffe network from MobileNetSSD_deploy.prototxt and MobileNetSSD_deploy.caffemodel */}
   , class_colors_{createClassColors(21)}
 {
 }
 
 void Dnn_lab::run()
 {
+  // TODO 0.0 Remove runtime error throw
+  throw std::runtime_error{"Dnn_lab::run() not implemented"};
+
   const std::string win_name = "SSD_demo";
   cv::namedWindow(win_name);
   cv::VideoCapture cap{0};
   for (;;)
   {
-    // TODO 1.1: Show video
+    // TODO 1.1: Capture and show video in loop.
 
     // TODO 1.3: Call method detectInFrame on <frame>
 
     // TODO 1.4: Call drawDetections
-    throw std::runtime_error{"Dnn_lab::run() not implemented"};
   }
 }
 

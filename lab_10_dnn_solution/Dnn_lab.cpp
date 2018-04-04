@@ -2,7 +2,6 @@
 #include "opencv2/highgui.hpp"
 #include "opencv2/imgproc.hpp"
 
-
 Dnn_lab::Dnn_lab(std::string data_folder)
   : net_{cv::dnn::readNetFromCaffe(data_folder + std::string("/MobileNetSSD_deploy.prototxt"),
                                    data_folder + std::string("/MobileNetSSD_deploy.caffemodel"))/* TODO 2.1: Initialize caffe network */}
