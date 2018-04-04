@@ -21,9 +21,9 @@ void Dnn_lab::run()
   {
     // TODO 1.1: Capture video frame
 
-    // TODO 1.3: Call method detectInFrame on <frame>
+    // TODO 1.3: Implement and call method detectInFrame on <frame>
 
-    // TODO 1.4: Call drawDetections
+    // TODO 1.4: Implement and call drawDetections
 
     // TODO 1.2: Show image frame
   }
