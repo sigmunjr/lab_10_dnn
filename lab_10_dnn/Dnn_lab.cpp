@@ -46,9 +46,11 @@ void Dnn_lab::drawDetections(cv::Mat& frame, const cv::Mat& detections, const fl
 cv::Mat Dnn_lab::detectInFrame(const cv::Mat& frame)
 {
   static const cv::Scalar mean = {127.5, 127.5, 127.5};
+  static const float scale_factor = 0.007843;
   // TODO 2.2: Resize <Frame> to 300 by 300
 
-  // TODO 2.3 Prepare data by converting it to blob. Use scale factor 1.0 and the <mean> already defined
+  // TODO 2.3 Prepare data by converting it to blob. Use <scale_factor> and the <mean> already defined.
+  // size equal to the resized image
 
   // TODO 2.4 Set the data blob as input to the network
 

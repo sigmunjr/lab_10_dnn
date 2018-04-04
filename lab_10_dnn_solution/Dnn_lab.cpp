@@ -3,8 +3,8 @@
 #include "opencv2/imgproc.hpp"
 
 Dnn_lab::Dnn_lab(std::string data_folder)
-  : net_{cv::dnn::readNetFromCaffe(data_folder + std::string("/MobileNetSSD_deploy.prototxt"),
-                                   data_folder + std::string("/MobileNetSSD_deploy.caffemodel"))/* TODO 2.1: Initialize caffe network */}
+  : net_{cv::dnn::readNetFromCaffe("/home/sigmund/dev/openpose/models/hand/pose_deploy.prototxt",
+                                   std::string("/home/sigmund/dev/openpose/models/hand/pose_iter_102000.caffemodel"))/* TODO 2.1: Initialize caffe network */}
   , class_colors_{createClassColors(21)}
 {
 }
@@ -68,13 +68,15 @@ void Dnn_lab::drawDetections(cv::Mat& frame, const cv::Mat& detections, const fl
 
 cv::Mat Dnn_lab::detectInFrame(const cv::Mat& frame)
 {
-  static const cv::Scalar mean = {104, 117, 123};
+  static const cv::Scalar mean = {127.5, 127.5, 127.5};
+  static const float scale_factor = 0.007843;
   // TODO 2.2: Resize <Frame> to 300 by 300
   cv::Mat resized_img;
   cv::resize(frame, resized_img, {300, 300});
 
-  // TODO 2.3 Prepare data by converting it to blob. Use scale factor 1.0 and the <mean> already defined
-  auto blob = cv::dnn::blobFromImage(resized_img, 0.007843, resized_img.size(), {127.5, 127.5, 127.5}, true);
+  // TODO 2.3 Prepare data by converting it to blob. Use <scale_factor> and the <mean> already defined.
+  // size equal to the resized image
+  auto blob = cv::dnn::blobFromImage(resized_img, scale_factor, resized_img.size(), mean, true);
 
   // TODO 2.4 Set the data blob as input to the network
   net_.setInput(blob);
