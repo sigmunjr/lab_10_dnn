@@ -14,3 +14,22 @@
 Check out the documentation to learn how to read caffe models.
 
 Test other caffemodels?
+
+## Advanced: "training" model in tensorflow
+Start with following code to load a classification model. Train the model to recognized **you** vs **background** and other people. Try training it live.
+
+import tensorflow as tf
+import tensorflow_hub as hub
+
+import numpy as np
+
+import cv2
+
+
+images = tf.placeholder(tf.float32, [None, None, None, 3])
+labels = tf.placeholder(tf.int64, [None])
+
+module = hub.Module("https://tfhub.dev/google/imagenet/mobilenet_v2_140_224/feature_vector/1")
+
+height, width = hub.get_expected_image_size(module)
+features = module(images)
