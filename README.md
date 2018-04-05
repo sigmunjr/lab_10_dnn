@@ -33,3 +33,5 @@ Start with following code to load a classification model. Train the model to rec
 
     height, width = hub.get_expected_image_size(module)
     features = module(images)
+
+Check https://github.com/sigmunjr/TensorflowHubTest to for a solution.
