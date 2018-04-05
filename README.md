@@ -18,6 +18,13 @@ Test other caffemodels?
 ## Advanced: "training" model in tensorflow
 Start with following code to load a classification model. Add a final layer on top and train that final layer of the model to recognized **you** vs **background** and other people. Try training it live.
 
+First run
+
+    pip install tensorflow
+    pip install tensorflow_hub
+
+Then you can start with the code:
+
     import tensorflow as tf
     import tensorflow_hub as hub
 
