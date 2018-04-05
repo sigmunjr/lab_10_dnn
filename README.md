@@ -16,7 +16,7 @@ Check out the documentation to learn how to read caffe models.
 Test other caffemodels?
 
 ## Advanced: "training" model in tensorflow
-Start with following code to load a classification model. Train the model to recognized **you** vs **background** and other people. Try training it live.
+Start with following code to load a classification model. Add a final layer on top and train that final layer of the model to recognized **you** vs **background** and other people. Try training it live.
 
     import tensorflow as tf
     import tensorflow_hub as hub
@@ -34,4 +34,4 @@ Start with following code to load a classification model. Train the model to rec
     height, width = hub.get_expected_image_size(module)
     features = module(images)
 
-Check https://github.com/sigmunjr/TensorflowHubTest to for a solution.
+Check https://github.com/sigmunjr/TensorflowHubTest for a solution.
